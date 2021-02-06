@@ -3,7 +3,12 @@
 function botGame() {
   let luckyNumber = 11;
   let number;
+
   number = prompt('Угадай число от 1 до 100');
+
+    if (number < 1 && number === null) {
+      return alert("Игра окончена");
+      }
 
     if (number > luckyNumber) {
       alert("Загаданное число меньше");
@@ -20,13 +25,8 @@ function botGame() {
     return botGame();
     }
 
-    else if (number == luckyNumber) {
+    else {
       alert("Поздравляю, Вы угадали!!!");
-    return;
-    }
-
-    else if (number == null) {
-      alert("Игра окончена");
     return;
     }
 
