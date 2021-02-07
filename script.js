@@ -1,34 +1,41 @@
 'use strict'
 
-function botGame(number) {
+function botGame() {
 
-  number = prompt('Угадай число от 1 до 100');
+  let number
   let luckyNumber = 11;
 
-    if (number < 1 && number === null) {
-      return alert("Игра окончена");
+  function letsGame() {
+
+    number = prompt('Угадай число от 1 до 100');
+
+      if (number < 1 && number === null) {
+        return alert("Игра окончена");
+        }
+
+      if (number > luckyNumber) {
+        alert("Загаданное число меньше");
+      return botGame();
       }
 
-    if (number > luckyNumber) {
-      alert("Загаданное число меньше");
-    return botGame();
-    }
+      else if (number < luckyNumber) {
+        alert("Загаданное число больше");
+      return botGame();
+      }
 
-    else if (number < luckyNumber) {
-      alert("Загаданное число больше");
-    return botGame();
-    }
+      else if (isNaN(number)) {
+        alert("Введи число!");
+      return botGame();
+      }
 
-    else if (isNaN(number)) {
-      alert("Введи число!");
-    return botGame();
-    }
+      else {
+        alert("Поздравляю, Вы угадали!!!");
+      return;
+      }
+  }
 
-    else {
-      alert("Поздравляю, Вы угадали!!!");
-    return;
-    }
-
+  return letsGame();
+  
 }
 
-botGame(11);
+botGame();
