@@ -1,10 +1,9 @@
 'use strict'
 
-function botGame() {
-  let luckyNumber = 11;
-  let number;
+function botGame(number) {
 
   number = prompt('Угадай число от 1 до 100');
+  let luckyNumber = 11;
 
     if (number < 1 && number === null) {
       return alert("Игра окончена");
@@ -32,4 +31,4 @@ function botGame() {
 
 }
 
-botGame();
+botGame(11);
